@@ -28,8 +28,7 @@ background:linear-gradient(to right,rgb(3, 38, 54),rgb(10, 82, 116))
 .GrBtn {
     background-color: #97c93e;
     border-color:#97c93e ;
-    margin: 2%;
-    width: 98%;
+    width: 100%;
     
 }
 .GrBtn:hover {
@@ -41,6 +40,9 @@ footer{
     width:100%;
     
 
+}
+label{
+    padding:6px;
 }
 
 

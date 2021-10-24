@@ -44,26 +44,26 @@ const comprarTickets=()=>{
                 </div>
             </div>  
             <div class="row">
-                <div class="col col-md-10 offset-md-2 col-lg-8 offset-lg-2 pt-2" >    
-                    <form>
-                        <div class="form-row">
-                            <div class="d-flex">
-                                <div class="form-group col-6 col-md-6">
+                <div class="col col-md-10 offset-md-1 col-lg-8 offset-lg-2 pt-2 " >    
+                    <form class="row g-4  ">
+                        <div class="form">
+                            <div class="d-flex ">
+                                <div class="form-group col-12 col-md-6 py-1 px-1 ">
                                     <input type="text" class="form-control" placeholder="Nombre">
                                 </div>
-                                <div class="form-group col-6 col-md-6">
+                                <div class="form-group col-12 col-md-6 py-1 px-1  ">
                                     <input type="text" class="form-control" placeholder="Apellido">
                                 </div>
                             </div>
-                            <div class="form-group col-12 col-md-12">
+                            <div class="form-group col-12 col-md-12 py-1 px-1 ">
                                 <input type="email" class="form-control" placeholder="Correo">
                             </div>
                             <div class="d-flex">
-                                <div class="form-group col-12 col-md-6">
+                                <div class="form-group col-12 col-md-6  px-1 ">
                                     <label for="">Cantidad</label>
                                     <input id="cantidadEntradas"type="text" class="form-control" placeholder="Cantidad">
                                 </div>
-                                <div class="form-group col-12 col-md-6">
+                                <div class="form-group col-12 col-md-6  px-1  ">
                                     <label for="categoria">Categoría</label>
                                     <select class="form-select" id="inputState">
                                         <option value="estudiante">Estudiante</option>
@@ -83,14 +83,14 @@ const comprarTickets=()=>{
                             </div>
                         </div>
                         
-                            <div class="form-row d-flex">
-                                <div class="form-group col">
-                                    <button type="reset" class="btn btn-success GrBtn  btn-block">Borrar</button>
-                                </div>
-                                <div class="form-group col">
-                                    <button type="button" id="botonCalc" class="btn btn-success GrBtn  btn-block ">Resumen</button>
-                                </div>           
+                        <div class="form-row d-flex">
+                             <div class="form-group col col-12 col-md-6 px-1 ">
+                                <button type="reset" class="btn btn-success GrBtn  btn-block">Borrar</button>
                             </div>
+                            <div class="form-group col col-12 col-md-6 px-1 ">
+                                <button type="button" id="botonCalc" class="btn btn-success GrBtn  btn-block ">Resumen</button>
+                            </div>           
+                        </div>
         
                     </form>
                 </div>
