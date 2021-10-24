@@ -1,0 +1,55 @@
+.container-fluid{
+    padding:0%;
+
+}
+
+
+
+.navbar-brand{
+    margin-left: 80px;
+}
+
+#uwu{
+    color:green;
+    margin-right: 80px;
+    
+}
+#uwu:hover{
+    background-color: rgba(5, 7, 7, 0.301);
+    border-radius: .2rem;
+}
+#footer{
+background-color:rgb(3, 38, 54);
+background:linear-gradient(to right,rgb(3, 38, 54),rgb(10, 82, 116))
+
+
+    
+}
+.GrBtn {
+    background-color: #97c93e;
+    border-color:#97c93e ;
+    margin: 2%;
+    width: 98%;
+    
+}
+.GrBtn:hover {
+    background-color: #769e32;
+    border-color:#769e32;
+
+}
+footer{ 
+    width:100%;
+    
+
+}
+
+
+    
+
+
+
+
+
+
+
+
