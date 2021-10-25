@@ -85,10 +85,28 @@ const comprarTickets=()=>{
                         
                         <div class="form-row d-flex">
                              <div class="form-group col col-12 col-md-6 px-1 ">
-                                <button type="reset" class="btn btn-success GrBtn  btn-block">Borrar</button>
+                                <button type="reset" onclick="limpiar()" class="btn btn-success GrBtn  btn-block">Borrar</button>
                             </div>
                             <div class="form-group col col-12 col-md-6 px-1 ">
-                                <button type="button" id="botonCalc" class="btn btn-success GrBtn  btn-block ">Resumen</button>
+                                <button type="button" id="botonCalc" class="btn btn btn-primary btn-success GrBtn  btn-block" data-bs-toggle="modal" data-bs-target="#exampleModal">Resumen</button>
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Ticket de compra N°</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                       ...
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar/Revisar monto</button>
+                                        <button type="button" class="btn btn-primary">Confirmar compra</button>
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
                             </div>           
                         </div>
         
@@ -99,5 +117,67 @@ const comprarTickets=()=>{
         </div>
     
     `;
+    document.querySelector("#botonCalc").addEventListener('click',()=>{
+        let inputs = document.querySelectorAll("input");
+        let descuento = document.querySelector("#inputState").value;
+        
+        
+        let comprador = {
+            nombre:inputs[0].value,
+            apellido:inputs[1].value,
+            correo:inputs[2].value,
+            cantidad:inputs[3].value,
+
+        };
+        calculoTotal(descuento,comprador.cantidad,comprador);
+    });
+
+};
+const calculoTotal=(desc,cantEnt,comp)=>{
+    let resultado = 0;
+    let descuento = 0;
+    let numT = document.querySelector("#exampleModalLabel")
+    for (let index=0 ; index<8;index ++ ){
+        numT.innerHTML+=NdTAl();
+    }
+    let modal=document.querySelector(".modal-body");
+    let alert = document.querySelector("#total");
+    if (desc=="estudiante"){
+        resultado=(cantEnt * 200)*0.2;
+        descuento = (cantEnt * 200)*0.8;
+        alert.innerHTML="Total a pagar : $";
+        alert.innerHTML+=resultado;
+
+    }else if (desc=="trainee"){
+        resultado=(cantEnt * 200)*0.5;
+        descuento=(cantEnt * 200)*0.5;
+        alert.innerHTML="Total a pagar : $";
+        alert.innerHTML+=resultado;
+    }else{
+        resultado=(cantEnt * 200)*0.85;
+        descuento=(cantEnt * 200)*0.15;
+        alert.innerHTML="Total a pagar : $";
+        alert.innerHTML+=resultado;
+
+    };
+    modal.innerHTML=`
+    <p>Nombre/s: ${comp.nombre}</p>
+    <p>Apellido/s: ${comp.apellido}</p>
+    <p>Correo: ${comp.correo}</p>
+    <p>Cantidad de entradas: ${comp.cantidad}</p>
+    <p>Categoría : ${desc}</p>
+    <p>Descuento por categoría: ${descuento} pesos.</p>
+    <p> Total a pagar: ${resultado} pesos.</p>
+
+`
+};
+const NdTAl=()=>{
+    return Math.floor(Math.random()*9);
+
+};
+const limpiar=()=> {
+    let alert = document.querySelector("#total");
+    alert.innerHTML="Total a pagar : $"
+
 
 }
